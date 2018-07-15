@@ -1,0 +1,248 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Graph &#8212; Graph 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Output" href="output.html" />
+    <link rel="prev" title="Introduction" href="README.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-graph">
+<span id="graph"></span><h1>Graph<a class="headerlink" href="#module-graph" title="Permalink to this headline">¶</a></h1>
+<p>Created on Sun Jul 15 20:52:20 2018</p>
+<p>&#64;author: Jatin Goel</p>
+<dl class="class">
+<dt id="graph.Graph">
+<em class="property">class </em><code class="descclassname">graph.</code><code class="descname">Graph</code><a class="headerlink" href="#graph.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for representing a Directed Acyclic Graph.</p>
+<dl class="method">
+<dt id="graph.Graph.add_edge">
+<code class="descname">add_edge</code><span class="sig-paren">(</span><em>edge</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new edge to the Graph.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>edge (NAND):    instance of the NAND class to add</dd>
+<dt>Returns:</dt>
+<dd>None:   if the edge was added successfully</dd>
+<dt>Raises:</dt>
+<dd><dl class="first last docutils">
+<dt>ValueError:</dt>
+<dd>if node A / node B of the edge does not exists in the Graph</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graph.Graph.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>node</em>, <em>ignore_errors=False</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.Graph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node to the Graph.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">node            (Node):     instance of the Node class to add</p>
+<p>ignore_errors   (bool):     boolean flag to speficy whether to
+raise ValueError if the Node already exists or ignore it</p>
+<blockquote class="last">
+<div>default:    False</div></blockquote>
+</dd>
+<dt>Returns:</dt>
+<dd>None:   if the node was added successfully</dd>
+<dt>Raises:</dt>
+<dd><dl class="first last docutils">
+<dt>ValueError:</dt>
+<dd>if node already exists in the Graph</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="graph.Graph.edges">
+<code class="descname">edges</code><a class="headerlink" href="#graph.Graph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dictionary of edges in the Graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graph.Graph.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.Graph.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Node in the graph which holds the give value.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>value   (int):  value of the Node</dd>
+<dt>Returns:</dt>
+<dd>object  (Node):     instance of the Node class which holds
+the given value</dd>
+<dt>Raises:</dt>
+<dd><dl class="first last docutils">
+<dt>ValueError:</dt>
+<dd>if no Node exists with the given value</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="graph.Graph.has_node">
+<code class="descname">has_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.Graph.has_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the given node is present in the Graph or not.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>node (Node):    instance of the Node class
+to check for presence</dd>
+<dt>Returns:</dt>
+<dd>bool:   boolean whether the node is present in the Graph or not</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="graph.Graph.nodes">
+<code class="descname">nodes</code><a class="headerlink" href="#graph.Graph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the set of all Nodes present in the Graph.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="graph.InvalidInputError">
+<em class="property">exception </em><code class="descclassname">graph.</code><code class="descname">InvalidInputError</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.InvalidInputError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+<p>Custom Error class for raising exception in case of Invalid Input.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="graph.NAND">
+<em class="property">class </em><code class="descclassname">graph.</code><code class="descname">NAND</code><span class="sig-paren">(</span><em>input_a</em>, <em>input_b</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.NAND" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for doing the NAND logical operation on the 2 given Nodes.</p>
+<dl class="attribute">
+<dt id="graph.NAND.input_a">
+<code class="descname">input_a</code><a class="headerlink" href="#graph.NAND.input_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Node consisting of input A to the NAND Gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="graph.NAND.input_b">
+<code class="descname">input_b</code><a class="headerlink" href="#graph.NAND.input_b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Node consisting of input B to the NAND Gate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="graph.NAND.output">
+<code class="descname">output</code><a class="headerlink" href="#graph.NAND.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Node consisting of the output to the NAND Gate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graph.NAND.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#graph.NAND.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the output of NAND Gate to None.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="graph.Node">
+<em class="property">class </em><code class="descclassname">graph.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for representing a single Node in the Graph.</p>
+<dl class="attribute">
+<dt id="graph.Node.value">
+<code class="descname">value</code><a class="headerlink" href="#graph.Node.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value that the Node holds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="graph.parse_input">
+<code class="descclassname">graph.</code><code class="descname">parse_input</code><span class="sig-paren">(</span><em>input_string</em><span class="sig-paren">)</span><a class="headerlink" href="#graph.parse_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the given input string and generates a Graph.</p>
+<p>Supported Format:</p>
+<blockquote>
+<div>!(C.D).!(!(A.B).C)</div></blockquote>
+<p>where,</p>
+<p>x1.x2   –  2 inputs to the Gate</p>
+<p>!       –  NAND operation</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="README.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="output.html" title="next chapter">Output</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/graph.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jatin Goel.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/graph.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
